@@ -2,8 +2,12 @@ const express = require('express')
 const mongoose=require('mongoose')
 const app = express()
 const env=require('dotenv')
+const UserData=require('./model/userData')
+
 env.config()
 const port = process.env.PORT||3000
+
+
 //mongdb connection 
 mongoose.connect(process.env.MONGO_URL).then(()=>{
     console.log("connected to DB successfuly");
